@@ -1,0 +1,149 @@
+
+
+body {    
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+} 
+ a:hover {
+    text-decoration: none;
+    color: black;
+} 
+
+.container {
+    margin-top: 60px;   
+    text-transform: capitalize;
+}
+
+
+
+.master{
+    width: 45%;
+    margin: 0 auto;
+    padding: 0px 10px;
+    /* background: radial-gradient(circle at 80% 30%, rgba(255, 181, 17, 0.72)  30%, rgba(231, 69, 54, 0.72) 90%);  */
+    border-radius: 8px;
+    color: #212529;
+}
+
+.search {
+    display: block;
+    float: right;
+}
+
+.search-input {
+    border-radius: 50px;
+    padding-left: 12px;
+    font-size: 12px;
+    height: 30px;
+    width: 170px;
+    border: none;
+    background-color:  rgba(203, 203, 203, 0.408);
+}
+
+.search-location {
+    border-radius: 50px;
+    padding: 7px 11px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    border: none;
+    background-color:  rgb(177, 215, 180);
+}
+
+.search-btn {
+    background-color: transparent;
+    margin: 0px 0px 0px -43px;
+
+    vertical-align: middle ;
+    height: 28px;
+}
+
+input[type="submit"] {
+    border-radius: 100px;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+}
+
+.search-btn .fa{
+    display: inline-block;
+    position: absolute;
+    margin-left: 13px; 
+    top: 7px;
+}
+
+
+.search-btn:hover {
+}
+
+.section-city {
+    height:100%;
+    line-height: 14px;
+}
+
+.temperature {  
+    display: block;
+    margin: 0px;
+    font-size: 110px;  
+    font-weight: 500;    
+    line-height: 120px;
+    width: 250px;
+    padding: 0px;
+}
+
+.celsius {
+    font-size: 26px;
+    position: relative;
+    display: inline;
+    vertical-align: top;
+    top: -30px;
+    left: -25px;     
+    font-weight: 500;           
+}
+
+.farh {
+    /* font-size: 30px; */
+    /* position: relative;
+    display: inline;
+    vertical-align: top;
+    top: -30px; */
+}
+
+.icon-temperature {
+    float: right;
+    width: 150px;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    margin-top: -20px;
+
+}
+
+.weather {
+    line-height: 16px;
+    font-size: 20px;
+}
+
+.weather-info { 
+    font-size: 12px;
+}
+
+.weather-card {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0px;
+    background-color:  rgba(203, 203, 203, 0.408);
+    border: none; 
+    margin: 3px auto;
+    border-radius: 4px;
+}
+
+.icon-weather {
+    width: 55%;
+    margin: -10px auto 10px auto; 
+    padding: 0px;             
+}
+

@@ -8,6 +8,7 @@ a {
     text-decoration: none;
     color: black;
 } 
+
  a:hover {
     text-decoration: none;
     color: black;
@@ -18,9 +19,7 @@ a {
     text-transform: capitalize;
 }
 
-
-
-.master{
+.master {
     width: 45%;
     margin: 0 auto;
     padding: 0px 10px;
@@ -28,6 +27,8 @@ a {
     border-radius: 8px;
     color: #212529;
 }
+
+
 
 .search {
     display: block;
@@ -147,3 +148,19 @@ input[type="submit"] {
     padding: 0px;             
 }
 
+
+.footer-link {
+    width: 45%;
+    margin: 10px auto;
+    padding: 0px 10px;
+    border-radius: 8px;
+    color: #212529;
+    font-size: 12px;
+    border: 0;
+
+}
+
+.footer-link a {
+   color: lightseagreen;
+
+}

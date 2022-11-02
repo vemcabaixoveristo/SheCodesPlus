@@ -1,5 +1,5 @@
 
-// Challenge 1
+// dates
 let date = new Date();
 
 let day = date.getDay();
@@ -19,8 +19,7 @@ dateDisplay.innerHTML = `${day}, ${hour}h${minuts}`;
 
 
 
-// Challenge 2
-
+// api 
 let apiKey = "a867e25f2d83db579421a57fd8e937ec";
 let city = "Lisboa";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -40,6 +39,20 @@ function search(event) {
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     axios.get(apiURL).then(showWeather);
+}
+
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let lat = coordinates.lat
+  let long = coordinates.lon
+
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+
+  console.log(apiURL)
+  axios.get(apiURL).then(showForecast);
 }
 
 function showWeather(response) {
@@ -65,6 +78,8 @@ function showWeather(response) {
   console.log("response", response.data);
   console.log(city);
   // console.log(response);
+
+  getForecast(response.data.coord)
 }
 
 
@@ -91,7 +106,6 @@ function showPosition(position) {
 
 function currentLocation() {
   navigator.geolocation.getCurrentPosition(showPosition)
-
 }
 
 
@@ -99,9 +113,45 @@ let buttonLocation = document.querySelector("#location");
 buttonLocation.addEventListener("click", currentLocation);
 
 
+function formatDay (timestamp) {
+
+  let date = new Date( timestamp * 1000)
+  let day = date.getDay();
+
+  let daysWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  day = daysWeek[day]
+  
+  return day
+}
 
 
-// Challenge 3
+function showForecast(response) {
+
+  let forecast = response.data.daily;
+  // console.log(forecast)
+
+  let forecastHTML = document.querySelector("#forecast")
+
+  forecast.forEach(function (forecastDay, index) {
+
+  if (index > 0 && index < 5 ) {
+    forecastHTML.innerHTML = forecastHTML.innerHTML + `
+      
+              <div class="col-3">     
+                <div class="card weather-card">
+                  <p class="text-weather">${formatDay(forecastDay.dt)}</p> 
+                   <img class="icon-weather" src="https://img.icons8.com/ios/100/000000/sun--v1.png"/>
+                  <span class="text-weather">${Math.round(forecastDay.temp.max)}º  ${Math.round(forecastDay.temp.min)}º</span>
+                </div>
+              </div> `
+      }    
+    }
+  )
+}
+
+
+
+
 
 
 // function showCelsiusTemp() {

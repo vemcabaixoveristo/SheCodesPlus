@@ -114,9 +114,8 @@ input[type="submit"] {
 }
 
 .icon-temperature {
-    float: right;
-    width: 150px;
-    height: auto;
+
+    width: 500px;
     padding: 0px;
     margin: 0px;
     margin-top: -20px;

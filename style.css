@@ -1,7 +1,6 @@
-
-
 body {    
     font-family: 'Poppins', sans-serif;
+    background-color: #8766D7;
 }
 
 a {
@@ -23,12 +22,11 @@ a {
     width: 45%;
     margin: 0 auto;
     padding: 0px 10px;
-    /* background: radial-gradient(circle at 80% 30%, rgba(255, 181, 17, 0.72)  30%, rgba(231, 69, 54, 0.72) 90%);  */
+     /* background: radial-gradient(circle at 80% 30%, rgba(255, 181, 17, 0.72)  30%, rgba(231, 69, 54, 0.72) 90%);   */
     border-radius: 8px;
     color: #212529;
+    background-color: rgba(255, 255, 255, 0.23); 
 }
-
-
 
 .search {
     display: block;
@@ -38,11 +36,33 @@ a {
 .search-input {
     border-radius: 50px;
     padding-left: 12px;
+    margin: 0px;
     font-size: 12px;
     height: 30px;
     width: 170px;
     border: none;
-    background-color:  rgba(203, 203, 203, 0.408);
+    background-color:  rgba(255, 255, 255, 0.25);
+}
+
+.search-btn {
+    background-color: transparent;
+    margin: 0px 0px 0px -33px;
+    vertical-align: middle ;
+    height: 28px;
+}
+
+input[type="submit"] {
+    margin: 0px 0px 0px -33px;
+    border-radius: 100px;
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+    width: 40px;
+}
+
+.section-city {
+    height:100%;
+    line-height: 14px;
 }
 
 .search-location {
@@ -51,38 +71,8 @@ a {
     font-size: 12px;
     margin-bottom: 10px;
     border: none;
-    background-color:  rgb(177, 215, 180);
-}
-
-.search-btn {
-    background-color: transparent;
-    margin: 0px 0px 0px -43px;
-
-    vertical-align: middle ;
-    height: 28px;
-}
-
-input[type="submit"] {
-    border-radius: 100px;
-    background-color: transparent;
-    border: none;
-    width: 40px;
-}
-
-.search-btn .fa{
-    display: inline-block;
-    position: absolute;
-    margin-left: 13px; 
-    top: 7px;
-}
-
-
-.search-btn:hover {
-}
-
-.section-city {
-    height:100%;
-    line-height: 14px;
+   background-color: #8766D7;
+    margin-top: 0px;
 }
 
 .temperature {  
@@ -105,23 +95,6 @@ input[type="submit"] {
     font-weight: 500;           
 }
 
-.farh {
-    /* font-size: 30px; */
-    /* position: relative;
-    display: inline;
-    vertical-align: top;
-    top: -30px; */
-}
-
-.icon-temperature {
-
-    width: 500px;
-    padding: 0px;
-    margin: 0px;
-    margin-top: -20px;
-
-}
-
 .weather {
     line-height: 16px;
     font-size: 20px;
@@ -135,7 +108,7 @@ input[type="submit"] {
     text-align: center;
     font-size: 12px;
     padding: 10px 0px;
-    background-color:  rgba(203, 203, 203, 0.408);
+    background-color:  rgba(255, 255, 255, 0.12);
     border: none; 
     margin: 3px auto;
     border-radius: 4px;
@@ -144,9 +117,13 @@ input[type="submit"] {
 .icon-weather {
     width: 55%;
     margin: -10px auto 10px auto; 
-    padding: 0px;             
+    padding: 0px;      
 }
 
+.icon-temperature {
+    float: right;
+    margin-top: 10px;
+}
 
 .footer-link {
     width: 45%;
@@ -156,10 +133,9 @@ input[type="submit"] {
     color: #212529;
     font-size: 12px;
     border: 0;
-
+    background-color: transparent;
 }
 
 .footer-link a {
-   color: lightseagreen;
-
+   color: #c8c8c8;
 }

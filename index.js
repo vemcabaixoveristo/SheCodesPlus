@@ -19,29 +19,20 @@ dateDisplay.innerHTML = `${day}, ${hour}h${minuts}`;
 
 
 function getForecast(city) {
-//  console.log(coordinates);
-
-  // let lat = coordinates.latitude
-  // let lon = coordinates.longitude
 
   let apiKey = "e2317030oda851f3c404ba4a7326tedf";
- // let apiURL = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
-
-  let citi = city
-
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${citi}&key=${apiKey}`
-
-  //console.log(apiURL)
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`
 
   axios.get(apiURL).then(showForecast);
 }
+
 
 
 function showWeather(response) {
   
     let city = response.data.city;
     let temperature = Math.round(response.data.temperature.current);
-
+    
     let iconTemp = response.data.condition.icon_url;
     let weather = response.data.condition.description;
     let wind = response.data.wind.speed;
@@ -59,9 +50,9 @@ function showWeather(response) {
     weatherDescription.innerHTML = weather;
     windDescription.innerHTML = `Wind : ${wind}%`;
     humidityDescription.innerHTML = `Humidity : ${humidity}%`;
-    iconTemperature.innerHTML = ` <span class="icon-temperature"> <img class="icon-weather" src="${iconTemp}"/> </span>`;
+    iconTemperature.innerHTML = ` <span> <img class="icon-weather icon-temperature" src="${iconTemp}"/> </span>`;
 
-    console.log( iconTemperature)
+    console.log(iconTemperature)
   
   getForecast(response.data.city)
   console.log("Resp", response)
@@ -86,7 +77,7 @@ function showForecast(response) {
   let forecastHTML = "";
   
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 5 ) {
+    if (index < 4 ) {
       forecastHTML = forecastHTML + `
         
                 <div class="col-3">     
